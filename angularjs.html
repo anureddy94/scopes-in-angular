@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+<div ng-controller="anu">
+  Hello {{msg}}!
+  <br />
+  Hello {{name}}!
+  (rootScope)
+</div>
+<br />
+<div ng-controller="prathu">
+  Hello {{msg}}!
+  <br />
+  Hey {{myName}}!
+  <br />
+  Hi {{name}}! (rootScope)
+</div>
+<script src="lib/angular.js"></script>
+<script>
+  var app = angular.module('myApp', []);
+
+  app.controller('anu', function ($scope, $rootScope) {
+    $scope.msg = 'World';
+    $rootScope.name = 'AngularJS';
+  });
+
+  app.controller('prathu', function ($scope, $rootScope) {
+    $scope.msg = 'This is my code';
+    $scope.myName = 'anureddy';
+      $rootScope.name='angular';
+  });
+</script>
+</body>
+</html>
